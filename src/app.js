@@ -50,6 +50,14 @@ if (config.env === 'production') {
   app.use('/v1/auth', authLimiter);
 }
 
+app.get('/log', (req, res, next) => {
+  try {
+    res.status(200).send({ PBL: 'Up and Running' });
+  } catch (err) {
+    next();
+  }
+});
+
 // v1 api routes
 app.use('/v1', routes);
 
