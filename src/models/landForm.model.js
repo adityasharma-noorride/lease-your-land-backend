@@ -3,28 +3,23 @@ const mongoose = require('mongoose');
 const landFormSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
     trim: true
   },
   aadhaar: {
     type: String,
-    required: true,
     trim: true
   },
   phone: {
     type: String,
-    required: true,
     trim: true
   },
   email: {
     type: String,
-    required: true,
     trim: true,
     lowercase: true
   },
   addressLine1: {
     type: String,
-    required: true,
     trim: true
   },
   addressLine2: {
@@ -33,38 +28,31 @@ const landFormSchema = new mongoose.Schema({
   },
   state: {
     type: String,
-    required: true,
     trim: true
   },
   city: {
     type: String,
-    required: true,
     trim: true
   },
   khasra: {
     type: String,
-    required: true,
     trim: true
   },
   tehseel: {
     type: String,
-    required: true,
     trim: true
   },
   area: {
     type: String,
-    required: true,
     trim: true
   },
   unit: {
     type: String,
-    required: true,
     enum: ['Acres', 'Gaj', 'Square Feet', 'Hectares', 'Bigha', 'Guntha'],
     default: 'Acres'
   },
   documentType: {
     type: String,
-    required: true,
     enum: ['Aadhaar Card', 'PAN Card', 'Rashan Card', 'Driving Licence', 'Passport', 'Other'],
     default: 'Aadhaar Card'
   },
@@ -76,7 +64,6 @@ const landFormSchema = new mongoose.Schema({
   },
   disclaimer: {
     type: Boolean,
-    required: true,
     default: false
   },
   status: {
@@ -87,7 +74,43 @@ const landFormSchema = new mongoose.Schema({
   submittedAt: {
     type: Date,
     default: Date.now
-  }
+  },
+  agreeToTerms: {
+    type: String,
+  },
+  contactName: {
+    type: String,
+  },
+  contactSurname: {
+    type: String,
+  },
+  contactTitle: {
+    type: String,
+  },
+  isLandowner: {
+    type: String,
+  },
+  khasraNumber: {
+    type: String,
+  },
+  landArea: {
+    type: String,
+  },
+  landType: {
+    type: String,
+  },
+  locationAddress: {
+    type: String,
+  },
+  locationPostalCode: {
+    type: String,
+  },
+  locationState: {
+    type: String,
+  },
+  phoneNumber: {
+    type: String,
+  },
 }, {
   timestamps: true
 });

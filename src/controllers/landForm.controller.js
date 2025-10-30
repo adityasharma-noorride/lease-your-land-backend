@@ -20,16 +20,30 @@ const submitLandForm = catchAsync(async (req, res) => {
     area,
     unit,
     documentType,
-    disclaimer
+    disclaimer,
+    agreeToTerms,
+    contactName,
+    contactSurname,
+    contactTitle,
+    isLandowner,
+    khasraNumber,
+    landArea,
+    landType,
+    locationAddress,
+    locationPostalCode,
+    locationState,
+    phoneNumber,
   } = req.body;
+  
+
 
   // Check if disclaimer is accepted
-  if (!disclaimer || disclaimer === 'false') {
-    return res.status(httpStatus.BAD_REQUEST).json({
-      status: 'error',
-      message: 'You must accept the disclaimer to submit the form.'
-    });
-  }
+  // if (!disclaimer || disclaimer === 'false' || false) {
+  //   return res.status(httpStatus.BAD_REQUEST).json({
+  //     status: 'error',
+  //     message: 'You must accept the disclaimer to submit the form.'
+  //   });
+  // }
 
   // Prepare document file data
   let documentFile = null;
@@ -58,6 +72,18 @@ const submitLandForm = catchAsync(async (req, res) => {
     unit,
     documentType,
     documentFile,
+    agreeToTerms,
+    contactName,
+    contactSurname,
+    contactTitle,
+    isLandowner,
+    khasraNumber,
+    landArea,
+    landType,
+    locationAddress,
+    locationPostalCode,
+    locationState,
+    phoneNumber,
     disclaimer: disclaimer === true || disclaimer === 'true'
   });
 

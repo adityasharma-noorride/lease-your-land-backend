@@ -6,7 +6,6 @@ const parseFile = require('../../middlewares/parseFile')
 
 router.post(
   '/submit',
-  parseFile,
   landFormController.submitLandForm
 );
 
